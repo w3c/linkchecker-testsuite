@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <test>
-    <title>test </title>
+    <title>test iframe longdesc (404)</title>
     <description>
     </description>
     <doc href="http://qa-dev.w3.org/link-testsuite/html_iframe_longdesc_b.html" />
