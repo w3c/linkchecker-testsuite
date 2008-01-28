@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <title>test reporting HTTP 411</title>
+    <description>
+    </description>
+    <doc href="http://qa-dev.w3.org/link-testsuite/http-411.html" />
+    <options />
+    <expect>
+        <report code="411" href="http://qa-dev.w3.org/link-testsuite/http.php?code=411" />
+    </expect>
+</test>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection>
+    <collectiontitle>HTTP Error codes test</collectiontitle>
+    <description>Testing whether the checker reports all possible kinds of HTTP errors (4xx and 5xx)</description>
+    <testcase src="400.test" />
+    <testcase src="401.test" />
+    <testcase src="402.test" />
+    <testcase src="403.test" />
+    <testcase src="404-DNS.test" />
+    <testcase src="404.test" />
+    <testcase src="405.test" />
+    <testcase src="406.test" />
+    <testcase src="407.test" />
+    <testcase src="408.test" />
+    <testcase src="409.test" />
+    <testcase src="410.test" />
+    <testcase src="411.test" />
+    <testcase src="412.test" />
+    <testcase src="413.test" />
+    <testcase src="414.test" />
+    <testcase src="415.test" />
+    <testcase src="416.test" />
+    <testcase src="417.test" />
+    <testcase src="500.test" />
+    <testcase src="501.test" />
+    <testcase src="502.test" />
+    <testcase src="503.test" />
+    <testcase src="504.test" />
+    <testcase src="505.test" />
+</collection>

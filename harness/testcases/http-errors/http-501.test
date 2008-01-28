@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <title>test reporting HTTP 501</title>
+    <description>
+    </description>
+    <doc href="http://qa-dev.w3.org/link-testsuite/http-501.html" />
+    <options />
+    <expect>
+        <report code="501" href="http://qa-dev.w3.org/link-testsuite/http.php?code=501" />
+    </expect>
+</test>

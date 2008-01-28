@@ -245,7 +245,6 @@ def buildTestSuite():
     suite = unittest.TestSuite()
     basedir = getBaseDir()
     for testcollection_file in (glob.glob(os.path.join(basedir, 'testcases', '**', '*.collection'))):
-        print testcollection_file
         colldir = os.path.dirname(os.path.abspath(testcollection_file))
         colldir = os.path.split(colldir)[-1]
         

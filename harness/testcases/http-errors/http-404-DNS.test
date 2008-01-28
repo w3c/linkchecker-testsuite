@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <title>test reporting HTTP 404 (DNS error)</title>
+    <description>
+    </description>
+    <doc href="http://qa-dev.w3.org/link-testsuite/http-404.html" />
+    <options />
+    <expect>
+        <report code="404" href="http://doesnotexist.w3.org/" />
+    </expect>
+</test>
