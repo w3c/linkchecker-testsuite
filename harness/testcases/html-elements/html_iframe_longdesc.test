@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <title>test base URI with relative BASE href (forbidden)</title>
+    <description>
+    </description>
+    <doc href="http://qa-dev.w3.org/link-testsuite/html_iframe_longdesc.html" />
+    <options />
+    <expect>
+        <report code="400" href="./trap/http.php?code=403" />
+    </expect>
+</test>

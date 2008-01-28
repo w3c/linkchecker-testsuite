@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <title>test frame longdesc</title>
+    <description>
+        OK frameset document with longdesc dereferencing (control test)
+    </description>
+    <doc href="http://qa-dev.w3.org/link-testsuite/html_frame_longdesc.html" />
+    <options />
+    <expect>
+    </expect>
+</test>

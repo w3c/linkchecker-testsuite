@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection>
+    <collectiontitle>HTML 4.01 Tests</collectiontitle>
+    <description>Testing whether the checker catches 404 for all attributes values set to %URI type in HTML 4.01</description>
+    <testcase src="html_base_href.test" />
+    <testcase src="html_base_href_b.test" />
+    <testcase src="html_frame_longdesc.test" />
+    <testcase src="html_frame_longdesc_b.test" />
+    <testcase src="html_iframe_longdesc.test" />
+    <testcase src="html_iframe_longdesc_b.test" />
+</collection>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <title>test dereference BASE href (404)</title>
+    <description>
+        BASE href 404
+        	EXPECTED: link checker throws error
+    </description>
+    <doc href="" />
+    <options />
+    <expect>
+        <report code="404" href="http://qa-dev.w3.org/link-testsuite/html_base_href_b.html" />
+    </expect>
+</test>
