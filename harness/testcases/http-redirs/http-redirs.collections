@@ -2,8 +2,8 @@
 <collection>
     <collectiontitle>HTTP redirections test</collectiontitle>
     <description>Testing whether the checker reports redirects</description>
-    <testcase src="300.test" />
-    <testcase src="301.test" />
-    <testcase src="302.test" />
-    <testcase src="307.test" />
+    <testcase src="http-300.test" />
+    <testcase src="http-301.test" />
+    <testcase src="http-302.test" />
+    <testcase src="http-307.test" />
 </collection>
