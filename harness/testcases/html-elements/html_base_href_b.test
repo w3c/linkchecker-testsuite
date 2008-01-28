@@ -8,6 +8,6 @@
     <doc href="" />
     <options />
     <expect>
-        <report code="404" href="http://qa-dev.w3.org/link-testsuite/html_base_href_b.html" />
+        <report code="404" href="http://qa-dev.w3.org/link-testsuite/thisURIdoesnotexist/" />
     </expect>
 </test>
