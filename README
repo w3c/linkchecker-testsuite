@@ -1,0 +1,298 @@
+This small test suite has been built to test the link checkers at W3C, 
+but could be used for any tool used to either check links in HTML documents, 
+spiders, or miscellaneous Web User-Agents.
+
+This test suite is work in progress. 
+Please submit any issue or idea to the public mailing-list public-qa-dev@w3.org
+
+*** Adding a test case ***
+
+- add the test metadata file to one of the collections in harness/testcases/*
+- refer to the test metadata file in the collection index 
+- TODO regenerate the documentation with `./harness/linktest.py doc`
+
+
+*** Running the test suite ***
+
+Run the harness as:
+./harness/linktest.py [-v|-q] run
+
+If any change is made to the code, make sure it has unit tests and check sanity with:
+./harness/linktest.py -v sanity
+
+
+
+
+===== below are test cases TBA =====
+
+
+
+
+** Collection: attribute values set to %URI type in HTML 4.01 **
+
+
+html-html-5) BASE href dereferences
+    EXPECTED: link checker finds no error
+
+html-5b) BASE href 404
+	EXPECTED: link checker throws error
+	
+html-6) FRAME longdesc dereferences
+    EXPECTED: link checker finds no error
+
+html-6b) FRAME longdesc 404
+	EXPECTED: link checker throws error
+
+html-7) IFRAME longdesc dereferences
+    EXPECTED: link checker finds no error
+
+html-7b) IFRAME longdesc 404
+	EXPECTED: link checker throws error
+
+html-8) HEAD profile dereferences
+    EXPECTED: link checker finds no error
+
+html-8b) HEAD profile 404
+	EXPECTED: link checker throws error
+
+html-9) LINK href dereferences
+    EXPECTED: link checker finds no error
+
+html-9b) link href 404
+	EXPECTED: link checker throws error
+
+html-10) A href dereferences
+    EXPECTED: link checker finds no error
+
+html-10b) A href 404
+	EXPECTED: link checker throws error
+
+html-11) AREA href dereferences
+    EXPECTED: link checker finds no error
+
+html-11b) AREA href 404
+	EXPECTED: link checker throws error
+
+html-12) SCRIPT src dereferences
+    EXPECTED: link checker finds no error
+
+html-12b) SCRIPT src 404
+	EXPECTED: link checker throws error
+
+html-13) INPUT src dereferences
+    EXPECTED: link checker finds no error
+
+html-13b) INPUT src 404
+	EXPECTED: link checker throws error
+
+html-14) FRAME src  dereferences
+    EXPECTED: link checker finds no error
+
+html-14b) FRAME src  404
+	EXPECTED: link checker throws error
+
+html-15) IFRAME src dereferences
+    EXPECTED: link checker finds no error
+
+html-15b) IFRAME src 404
+	EXPECTED: link checker throws error
+	
+html-16) IMG src dereferences
+    EXPECTED: link checker finds no error
+
+html-16b) IMG src 404
+	EXPECTED: link checker throws error
+	
+html-17) IMG longdesc dereferences
+    EXPECTED: link checker finds no error
+
+html-17b) IMG longdesc 404
+	EXPECTED: link checker throws error
+	
+html-18) IMG usemap dereferences
+    EXPECTED: link checker finds no error
+
+html-18b) IMG usemap 404
+	EXPECTED: link checker throws error
+	
+html-19) BODY background dereferences
+    EXPECTED: link checker finds no error
+
+html-19b) BODY background 404
+	EXPECTED: link checker throws error
+
+html-20) BLOCKQUOTE cite dereferences
+    EXPECTED: link checker finds no error
+
+html-20b) BLOCKQUOTE cite 404
+	EXPECTED: link checker throws error
+	
+html-21) Q cite  dereferences
+    EXPECTED: link checker finds no error
+
+html-21b) Q cite  404
+	EXPECTED: link checker throws error
+
+html-22) DEL cite dereferences
+    EXPECTED: link checker finds no error
+
+html-22b) DEL cite 404
+	EXPECTED: link checker throws error
+
+html-23) INS cite dereferences
+    EXPECTED: link checker finds no error
+
+html-23b) INS cite 404
+	EXPECTED: link checker throws error
+
+html-24) object data dereferences
+    EXPECTED: link checker finds no error
+
+html-24b) object data 404
+	EXPECTED: link checker throws error
+
+html-25) object classid dereferences
+    EXPECTED: link checker finds no error
+
+html-25b) object classid 404
+	EXPECTED: link checker throws error
+
+html-26) object codebase dereferences
+    EXPECTED: link checker finds no error
+
+html-26b) object codebase 404
+	EXPECTED: link checker throws error
+
+html-27) applet codebase dereferences
+    EXPECTED: link checker finds no error
+
+html-27b) applet codebase 404
+	EXPECTED: link checker throws error
+
+html-28) IMG usemap dereferences
+    EXPECTED: link checker finds no error
+
+html-28b) IMG usemap 404
+	EXPECTED: link checker throws error
+
+html-29) INPUT usemap dereferences
+    EXPECTED: link checker finds no error
+
+html-29b) INPUT usemap 404
+	EXPECTED: link checker throws error
+
+html-30) OBJECT usemap dereferences
+    EXPECTED: link checker finds no error
+
+html-30b) OBJECT usemap 404
+	EXPECTED: link checker throws error
+
+TBD form action too? only if method is GET? Or too dangerous given too many cuap CGIs?
+
+
+
+** Collection: HTTP response codes ***
+
+http-200) test for broken frags
+	EXPECTED: link checker MAY throw a warning
+
+http-400) Bad Request
+	EXPECTED: link checker throws error
+
+http-401) Unauthorized
+	EXPECTED: link checker throws error
+
+http-402) Payment Required
+	EXPECTED: link checker throws error
+
+http-403) Forbidden
+	EXPECTED: link checker throws error
+
+http-404) Not Found
+	EXPECTED: link checker throws error
+
+http-404-DNS) 'The hostname could not be resolved. Check the link for typos.',
+	EXPECTED: link checker throws error
+
+http-405) Method Not Allowed
+	EXPECTED: link checker throws error
+
+http-406) Not Acceptable
+	EXPECTED: link checker throws error
+
+http-407) Proxy Authentication Required
+	EXPECTED: link checker throws error
+
+http-408) Request Time-out
+	EXPECTED: link checker throws error
+
+http-409) Conflict
+	EXPECTED: link checker throws error
+
+http-410) Gone
+	EXPECTED: link checker throws error
+
+http-411) Length Required
+	EXPECTED: link checker throws error
+
+http-412) Precondition Failed
+	EXPECTED: link checker throws error
+
+http-413) Request Entity Too Large
+	EXPECTED: link checker throws error
+
+http-414) Request-URI Too Large
+	EXPECTED: link checker throws error
+
+http-415) Unsupported Media Type
+	EXPECTED: link checker throws error
+
+http-416) Requested range not satisfiable
+	EXPECTED: link checker throws error
+
+http-417) Expectation Failed
+	EXPECTED: link checker throws error
+
+http-500) Internal Server Error
+	EXPECTED: link checker throws error
+
+http-501) Not Implemented
+	EXPECTED: link checker throws error
+
+http-502) Bad Gateway
+	EXPECTED: link checker throws error
+
+http-503) Service Unavailable
+	EXPECTED: link checker throws error
+
+http-504) Gateway Time-out
+	EXPECTED: link checker throws error
+
+http-505) HTTP Version not supported
+	EXPECTED: link checker throws error
+
+[these should be implemented with specific apache directives, or a php script]
+
+
+** Collection: HTTP response codes II (optional?) ***
+
+http-300) Multiple Choices
+	EXPECTED: link checker MAY throw a warning
+
+http-301) Moved Permanently. The link should be updated
+	EXPECTED: link checker MAY throw a warning
+
+http-302) Found. Update the link if you believe it makes sense, or leave it as is
+	EXPECTED: link checker MAY throw a warning
+
+http-307) Temporary Redirect. Update the link if you believe it makes sense, or leave it as is
+	EXPECTED: link checker MAY throw a warning
+
+
+** Collection: Robots exclusion prototoc ***
+
+robots-1) link to resource in area forbidden by ROBOTS.txt but 404
+    EXPECTED: link checker follows link, throws error
+
+robots-2) link to resource in area forbidden by ROBOTS.txt, which links to a 404 resource
+    EXPECTED: link checker follows link, does not throw error even in recursive mode, but gives a warning
