@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <title>test base URI with BASE href elt</title>
+    <description>relative link goes 404 if BASE href element not parsed
+	EXPECTED: relative link goes 200 if OK - link checker finds no error
+    </description>
+    <doc href="http://qa-dev.w3.org/link-testsuite/base-1.html" />
+    <options />
+    <expect>
+    </expect>
+</test>
