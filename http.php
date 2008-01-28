@@ -36,9 +36,7 @@ $code = NULL;
 if ($_GET['code'] != '') {
     if(isset($codes[$_GET['code']])) {
         $code = $_GET['code'];
-        header('', 
-        TRUE, 
-        (int) $code);
+        header("HTTP/1.0 $code $codes[$code]");
     }
 }
 ?>
