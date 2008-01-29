@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <title>test HTML IMG src (404)</title>
+    <description>
+    </description>
+    <doc href="http://qa-dev.w3.org/link-testsuite/html_img_src_b.html" />
+    <options />
+    <expect>
+        <report code="404" href="http://qa-dev.w3.org/link-testsuite/http.php?code=404" />
+    </expect>
+</test>

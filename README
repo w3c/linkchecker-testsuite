@@ -34,17 +34,6 @@ html-8) HEAD profile dereferences
 html-8b) HEAD profile 404
 	EXPECTED: link checker throws error
 
-html-11) AREA href dereferences
-    EXPECTED: link checker finds no error
-
-html-11b) AREA href 404
-	EXPECTED: link checker throws error
-
-html-12) SCRIPT src dereferences
-    EXPECTED: link checker finds no error
-
-html-12b) SCRIPT src 404
-	EXPECTED: link checker throws error
 
 html-13) INPUT src dereferences
     EXPECTED: link checker finds no error
@@ -52,36 +41,20 @@ html-13) INPUT src dereferences
 html-13b) INPUT src 404
 	EXPECTED: link checker throws error
 
-html-14) FRAME src  dereferences
-    EXPECTED: link checker finds no error
-
-html-14b) FRAME src  404
-	EXPECTED: link checker throws error
-
-html-15) IFRAME src dereferences
-    EXPECTED: link checker finds no error
-
-html-15b) IFRAME src 404
-	EXPECTED: link checker throws error
-	
-html-16) IMG src dereferences
-    EXPECTED: link checker finds no error
-
-html-16b) IMG src 404
-	EXPECTED: link checker throws error
-	
-html-17) IMG longdesc dereferences
-    EXPECTED: link checker finds no error
-
-html-17b) IMG longdesc 404
-	EXPECTED: link checker throws error
 	
 html-18) IMG usemap dereferences
     EXPECTED: link checker finds no error
 
 html-18b) IMG usemap 404
 	EXPECTED: link checker throws error
-	
+
+html-11) AREA href dereferences
+    EXPECTED: link checker finds no error
+
+html-11b) AREA href 404
+	EXPECTED: link checker throws error
+
+
 html-19) BODY background dereferences
     EXPECTED: link checker finds no error
 
@@ -136,11 +109,6 @@ html-27) applet codebase dereferences
 html-27b) applet codebase 404
 	EXPECTED: link checker throws error
 
-html-28) IMG usemap dereferences
-    EXPECTED: link checker finds no error
-
-html-28b) IMG usemap 404
-	EXPECTED: link checker throws error
 
 html-29) INPUT usemap dereferences
     EXPECTED: link checker finds no error

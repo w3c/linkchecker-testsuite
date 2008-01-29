@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <title>test HTML SCRIPT src (control)</title>
+    <description>
+    </description>
+    <doc href="http://qa-dev.w3.org/link-testsuite/html_script_src.html" />
+    <options />
+    <expect>
+    </expect>
+</test>

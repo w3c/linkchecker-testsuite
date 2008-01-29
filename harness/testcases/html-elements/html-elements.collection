@@ -14,6 +14,12 @@
     <testcase src="html_iframe_longdesc_b.test" />
     <testcase src="html_iframe_src.test" />
     <testcase src="html_iframe_src_b.test" />
+    <testcase src="html_img_longdesc.test" />
+    <testcase src="html_img_longdesc_b.test" />
+    <testcase src="html_img_src.test" />
+    <testcase src="html_img_src_b.test" />
     <testcase src="html_link_href.test" />
     <testcase src="html_link_href_b.test" />
+    <testcase src="html_script_src.test" />
+    <testcase src="html_script_src_b.test" />
 </collection>
