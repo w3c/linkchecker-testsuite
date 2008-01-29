@@ -5,7 +5,7 @@
         A href 404
         	EXPECTED: link checker throws error
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/html_a_href.html" />
+    <doc href="http://qa-dev.w3.org/link-testsuite/html_a_href_b.html" />
     <options />
     <expect>
         <report code="404" href="http://qa-dev.w3.org/link-testsuite/http.php?code=404" />
