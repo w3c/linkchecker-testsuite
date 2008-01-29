@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <test>
-    <title>test HTML SCRIPT src (404)</title>
+    <title>test HTML IMG longdesc (404)</title>
     <description>
     </description>
     <doc href="http://qa-dev.w3.org/link-testsuite/html_script_src_b.html" />
