@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <title>test HTML A href (control)</title>
+    <description>
+        A href 404
+        	EXPECTED: link checker throws error
+    </description>
+    <doc href="http://qa-dev.w3.org/link-testsuite/html_a_href.html" />
+    <options />
+    <expect>
+    </expect>
+</test>

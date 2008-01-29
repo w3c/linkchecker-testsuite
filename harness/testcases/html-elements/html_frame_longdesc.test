@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <test>
-    <title>test frame longdesc</title>
+    <title>test HTML FRAME longdesc (control)</title>
     <description>
         OK frameset document with longdesc dereferencing (control test)
     </description>

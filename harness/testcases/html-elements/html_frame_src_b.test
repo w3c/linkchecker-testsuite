@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <test>
-    <title>test HTML FRAME longdesc (404)</title>
+    <title>test HTML FRAME src (404)</title>
     <description>
-        Frameset document with a frame longdesc dereferencing into a 404.
+        Frameset document with a frame src dereferencing into a 404.
         EXPECTED: link checker throws error
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/html_frame_longdesc_b.html" />
+    <doc href="http://qa-dev.w3.org/link-testsuite/html_frame_src_b.html" />
     <options />
     <expect>
         <report code="404" href="http://qa-dev.w3.org/link-testsuite/http.php?code=404" />

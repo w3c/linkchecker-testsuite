@@ -26,45 +26,12 @@ If any change is made to the code, make sure it has unit tests and check sanity 
 ===== below are test cases TBA =====
 
 
-
-
 ** Collection: attribute values set to %URI type in HTML 4.01 **
-
-
-html-html-5) BASE href dereferences
-    EXPECTED: link checker finds no error
-
-html-5b) BASE href 404
-	EXPECTED: link checker throws error
-	
-html-6) FRAME longdesc dereferences
-    EXPECTED: link checker finds no error
-
-html-6b) FRAME longdesc 404
-	EXPECTED: link checker throws error
-
-html-7) IFRAME longdesc dereferences
-    EXPECTED: link checker finds no error
-
-html-7b) IFRAME longdesc 404
-	EXPECTED: link checker throws error
 
 html-8) HEAD profile dereferences
     EXPECTED: link checker finds no error
 
 html-8b) HEAD profile 404
-	EXPECTED: link checker throws error
-
-html-9) LINK href dereferences
-    EXPECTED: link checker finds no error
-
-html-9b) link href 404
-	EXPECTED: link checker throws error
-
-html-10) A href dereferences
-    EXPECTED: link checker finds no error
-
-html-10b) A href 404
 	EXPECTED: link checker throws error
 
 html-11) AREA href dereferences
@@ -190,106 +157,7 @@ html-30b) OBJECT usemap 404
 TBD form action too? only if method is GET? Or too dangerous given too many cuap CGIs?
 
 
-
-** Collection: HTTP response codes ***
-
-http-200) test for broken frags
-	EXPECTED: link checker MAY throw a warning
-
-http-400) Bad Request
-	EXPECTED: link checker throws error
-
-http-401) Unauthorized
-	EXPECTED: link checker throws error
-
-http-402) Payment Required
-	EXPECTED: link checker throws error
-
-http-403) Forbidden
-	EXPECTED: link checker throws error
-
-http-404) Not Found
-	EXPECTED: link checker throws error
-
-http-404-DNS) 'The hostname could not be resolved. Check the link for typos.',
-	EXPECTED: link checker throws error
-
-http-405) Method Not Allowed
-	EXPECTED: link checker throws error
-
-http-406) Not Acceptable
-	EXPECTED: link checker throws error
-
-http-407) Proxy Authentication Required
-	EXPECTED: link checker throws error
-
-http-408) Request Time-out
-	EXPECTED: link checker throws error
-
-http-409) Conflict
-	EXPECTED: link checker throws error
-
-http-410) Gone
-	EXPECTED: link checker throws error
-
-http-411) Length Required
-	EXPECTED: link checker throws error
-
-http-412) Precondition Failed
-	EXPECTED: link checker throws error
-
-http-413) Request Entity Too Large
-	EXPECTED: link checker throws error
-
-http-414) Request-URI Too Large
-	EXPECTED: link checker throws error
-
-http-415) Unsupported Media Type
-	EXPECTED: link checker throws error
-
-http-416) Requested range not satisfiable
-	EXPECTED: link checker throws error
-
-http-417) Expectation Failed
-	EXPECTED: link checker throws error
-
-http-500) Internal Server Error
-	EXPECTED: link checker throws error
-
-http-501) Not Implemented
-	EXPECTED: link checker throws error
-
-http-502) Bad Gateway
-	EXPECTED: link checker throws error
-
-http-503) Service Unavailable
-	EXPECTED: link checker throws error
-
-http-504) Gateway Time-out
-	EXPECTED: link checker throws error
-
-http-505) HTTP Version not supported
-	EXPECTED: link checker throws error
-
-[these should be implemented with specific apache directives, or a php script]
-
-
-** Collection: HTTP response codes II (optional?) ***
-
-http-300) Multiple Choices
-	EXPECTED: link checker MAY throw a warning
-
-http-301) Moved Permanently. The link should be updated
-	EXPECTED: link checker MAY throw a warning
-
-http-302) Found. Update the link if you believe it makes sense, or leave it as is
-	EXPECTED: link checker MAY throw a warning
-
-http-307) Temporary Redirect. Update the link if you believe it makes sense, or leave it as is
-	EXPECTED: link checker MAY throw a warning
-
-
-** Collection: Robots exclusion prototoc ***
+** Collection: Robots exclusion prototol ***
 
 robots-1) link to resource in area forbidden by ROBOTS.txt but 404
     EXPECTED: link checker follows link, throws error

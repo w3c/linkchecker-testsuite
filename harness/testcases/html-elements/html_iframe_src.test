@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <test>
-    <title>test HTML BASE href (control)</title>
+    <title>test HTML IFRAME src (control)</title>
     <description>
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/html_base_href.html" />
+    <doc href="http://qa-dev.w3.org/link-testsuite/html_iframe_src.html" />
     <options />
     <expect>
     </expect>

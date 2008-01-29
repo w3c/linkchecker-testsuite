@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <test>
-    <title>test HTML IFRAME longdesc (404)</title>
+    <title>test HTML IFRAME src (404)</title>
     <description>
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/html_iframe_longdesc_b.html" />
+    <doc href="http://qa-dev.w3.org/link-testsuite/html_iframe_src_b.html" />
     <options />
     <expect>
         <report code="404" href="http://qa-dev.w3.org/link-testsuite/http.php?code=404" />

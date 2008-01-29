@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <title>test HTML FRAME src (control)</title>
+    <description>
+        OK frameset document with src dereferencing (control test)
+    </description>
+    <doc href="http://qa-dev.w3.org/link-testsuite/html_frame_src.html" />
+    <options />
+    <expect>
+    </expect>
+</test>
