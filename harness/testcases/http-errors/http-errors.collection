@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <collection>
-    <collectiontitle>HTTP Error codes test</collectiontitle>
+    <title>HTTP Error codes test</title>
     <description>Testing whether the checker reports all possible kinds of HTTP errors (4xx and 5xx)</description>
     <testcase src="http-400.test" />
     <testcase src="http-401.test" />

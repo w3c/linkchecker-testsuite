@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <collection>
-    <collectiontitle>Base Tests</collectiontitle>
+    <title>Base URI and Content-Location Tests</title>
     <description>Does the checker respect base href and content-location info? Does it report broken links based on those?</description>
     <testcase src="base1.test" />
     <testcase src="base2.test" />
