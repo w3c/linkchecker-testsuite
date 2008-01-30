@@ -53,7 +53,7 @@ class LinkTestCase(unittest.TestCase):
 
 class LinkTestCollection():
     """Collection of Link Checker Test Cases"""
-    def __init__(self, title=None, description=None, cases=None):
+    def __init__(self, title=None, description=None, casefiles=None, cases=None):
         if title != None:
             self.title = title
         else:
@@ -62,6 +62,10 @@ class LinkTestCollection():
             self.description = description
         else:
             self.description = u""
+        if (isinstance(casefiles, list)):
+            self.casefiles = casefiles
+        else:
+            self.casefiles = list()
         if (isinstance(cases, list)):
             self.cases = cases
         else:
