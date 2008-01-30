@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Link Check Test Suite Index</title>
+	<meta name="author" content="olivier Thereaux">
+	<style type="text/css" media="all">
+      @import "http://validator.w3.org/style/base.css";
+    </style>
+    
+</head>
+<body>
+<div id="banner">
+ <h1 id="title">
+   <a href="http://www.w3.org/"><img alt="W3C" width="110" height="61" id="logo" src="http://validator.w3.org/images/w3c.png" /></a>
+			<a href="./"><span>Link Check Test Suite</span></a>
+   </h1>
+   <p id="tagline">Collection of test cases for Link Checkers, spiders and other Web UAs</p>
+</div>
+<div class="doc">
+   <h2>Test Suite Index</h2> 
+<p>
+    This small test suite has been built to test the link checkers at W3C,
+    but could be used for any tool used to either check links in HTML documents, 
+    spiders, or miscellaneous Web User-Agents.
+</p>
+<p>
+    This test suite is work in progress. Please submit any issue or idea to the 
+    public mailing-list <a href="http://lists.w3.org/Archives/Public/public-qa-dev/" title="public-qa-dev@w3.org Mail Archives">public-qa-dev@w3.org</a>
+</p>
+
+{% for collection in collections %}
+<h3>{{collection.title}}</h3>
+<p>{{collection.description}}</p>
+ {% for case in collection.cases %}
+    <h4>{{case.title}}</h4>
+    <p><a href="{{case.docURI}}">tested document</a></p>
+<p>    {{case.description}}</p>
+    
+ {% endfor %}
+{% endfor %}
+
+
+</div>
+
+<div id="footer">
+
+
+		<p class="copyright">
+			Copyright &copy; {{year}}
+			W3C&reg;
+
+			(MIT,
+			ERCIM,
+			Keio),
+			All Rights Reserved.
+			W3C liability,
+			trademark,
+			document use
+
+			and software licensing
+
+			rules apply. Your interactions with this site are in accordance
+			with our public and
+			Member privacy
+			statements.
+		</p>
+</div>
+
+</body>
+</html>
