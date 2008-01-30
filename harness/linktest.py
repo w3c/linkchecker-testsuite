@@ -21,7 +21,7 @@ basedir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(basedir, "lib"))
 from W3CLinkCheckerClient import W3CLinkCheckerClient, W3CLinkCheckerClient_UT
 from LinkTestCase import LinkTestCase, LinkTestCase_UT, LinkTestCollection
-
+from Documentation import Documentation
 help_message = '''
 
 Run or Generate test suite for link checkers
@@ -91,7 +91,7 @@ class TestRun(unittest.TestCase):
         collection_file = os.path.join(basedir, 'sample', 'sample.collection')
         sample_collection = readCollectionMeta(collection_file)
         self.assertEqual(
-          (sample_collection.title, sample_collection.description, sample_collection.cases),
+          (sample_collection.title, sample_collection.description, sample_collection.casefiles),
           (u"test", u"Sample Collection with one test", ["sample.test"])
         )
     
@@ -100,7 +100,7 @@ class TestRun(unittest.TestCase):
         basedir = getBaseDir()
         collection_file = os.path.join(basedir, 'sample', 'sample.collection')
         sample_collection = readCollectionMeta(collection_file)
-        for testcase_file in sample_collection.cases:
+        for testcase_file in sample_collection.casefiles:
             test_file = os.path.join(basedir, 'sample', testcase_file)
             sample_test = readTestCase(test_file)
             self.assertEqual(
@@ -165,7 +165,7 @@ def main(argv=None):
         unittest.TextTestRunner(verbosity=verbose).run(suite)
         
     elif args[0] == "doc":
-        pass
+        generateIndex()
 
 def getBaseDir():
     basedir = os.path.dirname(os.path.abspath(__file__))
@@ -212,12 +212,10 @@ def readTestCollection(collection_path):
     
     for metafile in glob.glob(os.path.join(collection_path, '*.collection')):
         collection = readCollectionMeta(metafile)
-    for testfile in (glob.glob(os.path.join(collection_path, '*.test'))):
-        case = readTestCase(test_file)
-        collection.cases
 
 def readCollectionMeta(collection_file):
     collection_file_handle = open(collection_file, 'r')
+    collection_path = os.path.dirname(os.path.abspath(collection_file))
     try:
         tree = ET.parse(collection_file_handle)
     except SyntaxError, v:
@@ -238,8 +236,20 @@ def readCollectionMeta(collection_file):
             tests.append(test.attrib["src"])
         else:
             tests.append(test.tag)
-    collection = LinkTestCollection(title=title, description=description, cases=tests)
+    collection = LinkTestCollection(title=title, description=description, casefiles=tests)
+    for testfile in collection.casefiles:
+        case = readTestCase(os.path.join(collection_path, testfile))
+        collection.cases.append(case)
     return collection
+
+def generateIndex():
+    index = Documentation('index')
+    for testcollection_file in (glob.glob(os.path.join(basedir, 'testcases', '**', '*.collection'))):
+        colldir = os.path.dirname(os.path.abspath(testcollection_file))
+        colldir = os.path.split(colldir)[-1]        
+        testcollection = readCollectionMeta(testcollection_file)
+        index.addCollection(testcollection)
+    print index.generate(template_path=os.path.join(basedir, "templates")).encode('utf-8')
 
 def buildTestSuite():
     suite = unittest.TestSuite()
@@ -249,8 +259,7 @@ def buildTestSuite():
         colldir = os.path.split(colldir)[-1]
         
         testcollection = readCollectionMeta(testcollection_file)
-        for testfile in testcollection.cases:
-            case = readTestCase(os.path.join(basedir, 'testcases',colldir,testfile))
+        for case in testcollection.cases:
             suite.addTest(case)
     return suite
 
