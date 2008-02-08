@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <test>
-    <title>test HTML Q cite (control)</title>
+    <title>test HTML INS cite (control)</title>
     <description>
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/html_q_cite.html" />
+    <doc href="http://qa-dev.w3.org/link-testsuite/html_ins_cite.html" />
     <options />
     <expect>
     </expect>
