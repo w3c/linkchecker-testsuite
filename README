@@ -43,12 +43,6 @@ html-11b) AREA href 404
 	EXPECTED: link checker throws error
 
 
-html-19) BODY background dereferences
-    EXPECTED: link checker finds no error
-
-html-19b) BODY background 404
-	EXPECTED: link checker throws error
-
 
 html-24) object data dereferences
     EXPECTED: link checker finds no error
