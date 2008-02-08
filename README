@@ -28,18 +28,6 @@ If any change is made to the code, make sure it has unit tests and check sanity 
 
 ** Collection: attribute values set to %URI type in HTML 4.01 **
 
-html-8) HEAD profile dereferences
-    EXPECTED: link checker finds no error
-
-html-8b) HEAD profile 404
-	EXPECTED: link checker throws error
-
-
-html-13) INPUT src dereferences
-    EXPECTED: link checker finds no error
-
-html-13b) INPUT src 404
-	EXPECTED: link checker throws error
 
 	
 html-18) IMG usemap dereferences
@@ -61,29 +49,6 @@ html-19) BODY background dereferences
 html-19b) BODY background 404
 	EXPECTED: link checker throws error
 
-html-20) BLOCKQUOTE cite dereferences
-    EXPECTED: link checker finds no error
-
-html-20b) BLOCKQUOTE cite 404
-	EXPECTED: link checker throws error
-	
-html-21) Q cite  dereferences
-    EXPECTED: link checker finds no error
-
-html-21b) Q cite  404
-	EXPECTED: link checker throws error
-
-html-22) DEL cite dereferences
-    EXPECTED: link checker finds no error
-
-html-22b) DEL cite 404
-	EXPECTED: link checker throws error
-
-html-23) INS cite dereferences
-    EXPECTED: link checker finds no error
-
-html-23b) INS cite 404
-	EXPECTED: link checker throws error
 
 html-24) object data dereferences
     EXPECTED: link checker finds no error
@@ -132,3 +97,13 @@ robots-1) link to resource in area forbidden by ROBOTS.txt but 404
 
 robots-2) link to resource in area forbidden by ROBOTS.txt, which links to a 404 resource
     EXPECTED: link checker follows link, does not throw error even in recursive mode, but gives a warning
+
+*** Collection URI schemes ***
+
+http
+mailto
+news
+urn
+ftp
+gopher
+...
