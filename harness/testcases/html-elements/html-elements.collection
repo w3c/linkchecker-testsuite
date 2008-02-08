@@ -6,6 +6,8 @@
     <testcase src="html_a_href_b.test" />
     <testcase src="html_base_href.test" />
     <testcase src="html_base_href_b.test" />
+    <testcase src="html_body_background.test" />
+    <testcase src="html_body_background_b.test" />
     <testcase src="html_blockquote_cite.test" />
     <testcase src="html_blockquote_cite_b.test" />
     <testcase src="html_del_cite.test" />

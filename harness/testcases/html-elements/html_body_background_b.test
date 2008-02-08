@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <test>
-    <title>test HTML SCRIPT src (404)</title>
+    <title>test HTML BODY background (404)</title>
     <description>
+        BODY background 404
+        	EXPECTED: link checker throws error
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/html_script_src_b.html" />
+    <doc href="http://qa-dev.w3.org/link-testsuite/html_body_background.html" />
     <options />
     <expect>
         <report code="404" href="http://qa-dev.w3.org/link-testsuite/http.php?code=404" />
