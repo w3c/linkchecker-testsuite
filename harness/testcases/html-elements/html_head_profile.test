@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <title>test HTML HEAD profile (control)</title>
+    <description>
+    </description>
+    <doc href="http://qa-dev.w3.org/link-testsuite/html_head_profile.html" />
+    <options />
+    <expect>
+    </expect>
+</test>

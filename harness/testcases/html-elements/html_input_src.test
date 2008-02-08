@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <title>test HTML INPUT src (control)</title>
+    <description>
+        INPUT src OK
+        	EXPECTED: link checker throws error
+    </description>
+    <doc href="http://qa-dev.w3.org/link-testsuite/html_input_src.html" />
+    <options />
+    <expect>
+    </expect>
+</test>
