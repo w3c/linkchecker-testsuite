@@ -31,21 +31,21 @@ class Documentation:
     
     def generate(self, template_path=None):
         """pass through template engine"""
-        import jinja,datetime
+        import jinja2,datetime
         if template_path == None:
             template_path= os.path.abspath('..')
             template_path=os.path.join(template_path, "templates")    
-        template_engine = jinja.Environment(loader=jinja.FileSystemLoader(template_path))
+        template_engine = jinja2.Environment(loader=jinja2.FileSystemLoader(template_path))
         template = template_engine.get_template(os.path.join(self.type+'.html'))
         return template.render(collections=self.test_collections,
         year=str(datetime.date.today().year))
 
 class DocumentationTests(unittest.TestCase):
-    def test_has_jinja(self):
+    def test_has_jinja2(self):
         try:
-            import jinja
+            import jinja2
         except ImportError:
-            self.fail("you need to install the jinja templating system -- http://jinja.pocoo.org/download")
+            self.fail("you need to install the jinja2 templating system -- http://jinja.pocoo.org/2/")
 
     def test_init(self):
         """initialize a Documentation Generator"""
