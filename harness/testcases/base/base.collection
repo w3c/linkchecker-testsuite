@@ -6,4 +6,5 @@
     <testcase src="base2.test" />
     <testcase src="base3.test" />
     <testcase src="base4.test" />
+    <testcase src="base5.test" />
 </collection>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <title>test base URI with BASE href elt and Content-Base</title>
+    <description>with both BASE href elt and HTTP Content-Base
+    	href takes precedence http://www.w3.org/TR/html401/struct/links.html#h-12.4.1
+    	relative link goes 404 if neither BASE nor Content-Base respected
+    	relative link goes 403 if HTTP Content-Base respected instead of BASE
+    	EXPECTED: relative link goes 200 if OK - link checker finds no error</description>
+    <doc href="http://qa-dev.w3.org/link-testsuite/base-5.php" />
+    <options />
+    <expect>
+    </expect>
+</test>
