@@ -30,40 +30,6 @@
 </p>
 
 
-<h3>Base URI and Content-Location Tests</h3>
-<p>Does the checker respect base href and content-location info? Does it report broken links based on those?</p>
- 
-    <h4>test base URI with BASE href elt</h4>
-    <p><a href="http://qa-dev.w3.org/link-testsuite/base-1.html">tested document</a></p>
-<p>    relative link goes 404 if BASE href element not parsed
-	EXPECTED: relative link goes 200 if OK - link checker finds no error
-    </p>
-    
- 
-    <h4>test base URI with HTTP Content-Location</h4>
-    <p><a href="http://qa-dev.w3.org/link-testsuite/base-1.html">tested document</a></p>
-<p>    relative link goes 404 if HTTP Content-Location not parsed
-    	EXPECTED: relative link goes 200 if OK - link checker finds no error</p>
-    
- 
-    <h4>test base URI with BASE href elt and Content-Location</h4>
-    <p><a href="http://qa-dev.w3.org/link-testsuite/base-3.php">tested document</a></p>
-<p>    with both BASE href elt and HTTP Content-Location
-    	href takes precedence http://www.w3.org/TR/html401/struct/links.html#h-12.4.1
-    	relative link goes 404 if neither BASE nor Content-Location respected
-    	relative link goes 403 if HTTP Content-Location respected instead of BASE
-    	EXPECTED: relative link goes 200 if OK - link checker finds no error</p>
-    
- 
-    <h4>test base URI with relative BASE href (forbidden)</h4>
-    <p><a href="http://qa-dev.w3.org/link-testsuite/base-4.html">tested document</a></p>
-<p>    
-        This document has a bogus BASE href value. Per the spec:
-            <q cite="http://www.w3.org/TR/html401/struct/links.html#h-12.4">This attribute specifies an <strong>absolute URI</strong> that acts as the base URI for resolving relative URIs.</q>
-    </p>
-    
- 
-
 <h3>HTML 4.01 URI attribute values Tests</h3>
 <p>Testing whether the checker catches 404 for all attributes values set to %URI type in HTML 4.01</p>
  
@@ -298,6 +264,77 @@
     
  
 
+<h3></h3>
+<p>Testing whether the checker reports redirects</p>
+ 
+    <h4>test reporting HTTP 300 (optional)</h4>
+    <p><a href="http://qa-dev.w3.org/link-testsuite/http-300.html">tested document</a></p>
+<p>    
+    </p>
+    
+ 
+    <h4>test reporting HTTP 301 (optional)</h4>
+    <p><a href="http://qa-dev.w3.org/link-testsuite/http-301.html">tested document</a></p>
+<p>    
+    </p>
+    
+ 
+    <h4>test reporting HTTP 302 (optional)</h4>
+    <p><a href="http://qa-dev.w3.org/link-testsuite/http-302.html">tested document</a></p>
+<p>    
+    </p>
+    
+ 
+    <h4>test reporting HTTP 307 (optional)</h4>
+    <p><a href="http://qa-dev.w3.org/link-testsuite/http-307.html">tested document</a></p>
+<p>    
+    </p>
+    
+ 
+
+<h3>Base URI and Content-Location Tests</h3>
+<p>Does the checker respect base href and content-location info? Does it report broken links based on those?</p>
+ 
+    <h4>test base URI with BASE href elt</h4>
+    <p><a href="http://qa-dev.w3.org/link-testsuite/base-1.html">tested document</a></p>
+<p>    relative link goes 404 if BASE href element not parsed
+	EXPECTED: relative link goes 200 if OK - link checker finds no error
+    </p>
+    
+ 
+    <h4>test base URI with HTTP Content-Location</h4>
+    <p><a href="http://qa-dev.w3.org/link-testsuite/base-2.php">tested document</a></p>
+<p>    relative link goes 404 if HTTP Content-Location not parsed
+    	EXPECTED: relative link goes 200 if OK - link checker finds no error</p>
+    
+ 
+    <h4>test base URI with BASE href elt and Content-Location</h4>
+    <p><a href="http://qa-dev.w3.org/link-testsuite/base-3.php">tested document</a></p>
+<p>    with both BASE href elt and HTTP Content-Location
+    	href takes precedence http://www.w3.org/TR/html401/struct/links.html#h-12.4.1
+    	relative link goes 404 if neither BASE nor Content-Location respected
+    	relative link goes 403 if HTTP Content-Location respected instead of BASE
+    	EXPECTED: relative link goes 200 if OK - link checker finds no error</p>
+    
+ 
+    <h4>test base URI with relative BASE href (forbidden)</h4>
+    <p><a href="http://qa-dev.w3.org/link-testsuite/base-4.html">tested document</a></p>
+<p>    
+        This document has a bogus BASE href value. Per the spec:
+            <q cite="http://www.w3.org/TR/html401/struct/links.html#h-12.4">This attribute specifies an <strong>absolute URI</strong> that acts as the base URI for resolving relative URIs.</q>
+    </p>
+    
+ 
+    <h4>test base URI with BASE href elt and Content-Base</h4>
+    <p><a href="http://qa-dev.w3.org/link-testsuite/base-5.php">tested document</a></p>
+<p>    with both BASE href elt and HTTP Content-Base
+    	href takes precedence http://www.w3.org/TR/html401/struct/links.html#h-12.4.1
+    	relative link goes 404 if neither BASE nor Content-Base respected
+    	relative link goes 403 if HTTP Content-Base respected instead of BASE
+    	EXPECTED: relative link goes 200 if OK - link checker finds no error</p>
+    
+ 
+
 <h3>HTTP Error codes test</h3>
 <p>Testing whether the checker reports all possible kinds of HTTP errors (4xx and 5xx)</p>
  
@@ -452,34 +489,6 @@
     
  
 
-<h3></h3>
-<p>Testing whether the checker reports redirects</p>
- 
-    <h4>test reporting HTTP 300 (optional)</h4>
-    <p><a href="http://qa-dev.w3.org/link-testsuite/http-300.html">tested document</a></p>
-<p>    
-    </p>
-    
- 
-    <h4>test reporting HTTP 301 (optional)</h4>
-    <p><a href="http://qa-dev.w3.org/link-testsuite/http-301.html">tested document</a></p>
-<p>    
-    </p>
-    
- 
-    <h4>test reporting HTTP 302 (optional)</h4>
-    <p><a href="http://qa-dev.w3.org/link-testsuite/http-302.html">tested document</a></p>
-<p>    
-    </p>
-    
- 
-    <h4>test reporting HTTP 307 (optional)</h4>
-    <p><a href="http://qa-dev.w3.org/link-testsuite/http-307.html">tested document</a></p>
-<p>    
-    </p>
-    
- 
-
 
 
 </div>
@@ -488,7 +497,7 @@
 
 
 		<p class="copyright">
-			Copyright &copy; 2008
+			Copyright &copy; 2010
 			W3C&reg;
 
 			(MIT,
