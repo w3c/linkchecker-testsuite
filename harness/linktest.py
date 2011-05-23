@@ -129,7 +129,7 @@ def main(argv=None):
         argv = sys.argv
     try:
         try:
-            opts, args = getopt.getopt(argv[1:], "ho:vq", ["help", "verbose", "quiet", "checker_uri="])
+            opts, args = getopt.getopt(argv[1:], "ho:vq", ["help", "output=", "verbose", "quiet", "checker_uri="])
             for (opt, value) in opts:
                 if opt == "h" or opt == "--help":
                     raise Usage(msg)
@@ -138,9 +138,9 @@ def main(argv=None):
     
         # option processing
         for option, value in opts:
-            if option == "-v" or opt == "--verbose":
+            if option in ("-v", "--verbose"):
                 verbose = 2
-            if option == "-q" or opt == "--quiet":
+            if option in ("-q", "--quiet"):
                 verbose = 0
             if option in ("-h", "--help"):
                 raise Usage(help_message)
