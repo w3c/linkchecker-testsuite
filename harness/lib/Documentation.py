@@ -9,7 +9,6 @@ Copyright (c) 2008 W3C. Licensed under the W3C Software License
 http://www.w3.org/Consortium/Legal/copyright-software
 """
 
-import sys
 import os
 import unittest
 import LinkTestCase

@@ -14,12 +14,11 @@ import sys
 import glob
 import getopt
 import unittest
-import re
 import xml.etree.cElementTree as ET
 
 basedir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(basedir, "lib"))
-from W3CLinkCheckerClient import W3CLinkCheckerClient, W3CLinkCheckerClient_UT
+from W3CLinkCheckerClient import W3CLinkCheckerClient_UT
 from LinkTestCase import LinkTestCase, LinkTestCase_UT, LinkTestCollection
 from Documentation import Documentation
 help_message = '''
