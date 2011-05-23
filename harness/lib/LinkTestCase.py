@@ -18,6 +18,7 @@ from W3CLinkCheckerClient import W3CLinkCheckerClient
 class LinkTestCase(unittest.TestCase):
     """Atomic Test Case for the link checker suite"""
     def __init__(self, title=None, description=None, docURI=None, runOptions=None, expectResults=None, checker=None):
+        unittest.TestCase.__init__(self, "run_testcase")
         if title:
             self.title = title
         else:
@@ -42,7 +43,6 @@ class LinkTestCase(unittest.TestCase):
             self.checker = checker
         else:
             self.checker = W3CLinkCheckerClient()
-        self._testMethodName= "run_testcase"
 
     def shortDescription(self):
         return self.title
