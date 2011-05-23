@@ -18,7 +18,7 @@ import xml.etree.cElementTree as ET
 
 basedir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(basedir, "lib"))
-from W3CLinkCheckerClient import W3CLinkCheckerClient_UT
+from W3CLinkCheckerClient import W3CLinkCheckerClient, W3CLinkCheckerClient_UT
 from LinkTestCase import LinkTestCase, LinkTestCase_UT, LinkTestCollection
 from Documentation import Documentation
 help_message = '''
@@ -30,7 +30,9 @@ Usage: linktest.py [options] [run|sanity|doc]
         -h, --help: this manual you are reading
         -v, --verbose: verbose output
         -q, --quiet: suppress all output except errors
-    
+        --checker_uri: use a specific link checker instance
+          e.g http://validator.w3.org/checklink
+
     Modes:
         run: run the link checker test suite 
         sanity: check that this code is still working 
@@ -122,11 +124,12 @@ class TestRun(unittest.TestCase):
 
 def main(argv=None):
     verbose=1
+    checker_uri = None
     if argv is None:
         argv = sys.argv
     try:
         try:
-            opts, args = getopt.getopt(argv[1:], "ho:vq", ["help", "verbose", "quiet"])
+            opts, args = getopt.getopt(argv[1:], "ho:vq", ["help", "verbose", "quiet", "checker_uri="])
             for (opt, value) in opts:
                 if opt == "h" or opt == "--help":
                     raise Usage(msg)
@@ -143,6 +146,8 @@ def main(argv=None):
                 raise Usage(help_message)
             if option in ("-o", "--output"):
                 output = value
+            if option == "--checker_uri":
+                checker_uri = value
 
         if len(args) == 0:
             raise Usage(help_message)
@@ -154,7 +159,10 @@ def main(argv=None):
 
         
     if args[0] == "run":
-        suite = buildTestSuite()
+        checker = None
+        if checker_uri:
+            checker = W3CLinkCheckerClient(checker_uri)
+        suite = buildTestSuite(checker)
         unittest.TextTestRunner(verbosity=verbose).run(suite)
     elif args[0] == "sanity":
         suite1 = unittest.TestLoader().loadTestsFromTestCase(W3CLinkCheckerClient_UT)
@@ -170,7 +178,7 @@ def getBaseDir():
     basedir = os.path.dirname(os.path.abspath(__file__))
     return basedir
 
-def readTestCase(test_file):
+def readTestCase(test_file, checker=None):
     test_file_handle = open(test_file, 'r')
     try:
         tree = ET.parse(test_file_handle)
@@ -203,7 +211,7 @@ def readTestCase(test_file):
                 else:
                     expected[child.attrib["code"]] = (child.attrib["href"])
                 
-    case = LinkTestCase(title=title, description=descr, docURI=test_uri, runOptions=None, expectResults=expected)
+    case = LinkTestCase(title=title, description=descr, docURI=test_uri, runOptions=None, expectResults=expected, checker=checker)
     return case
 
 def readTestCollection(collection_path):
@@ -212,7 +220,7 @@ def readTestCollection(collection_path):
     for metafile in glob.glob(os.path.join(collection_path, '*.collection')):
         collection = readCollectionMeta(metafile)
 
-def readCollectionMeta(collection_file):
+def readCollectionMeta(collection_file, checker=None):
     collection_file_handle = open(collection_file, 'r')
     collection_path = os.path.dirname(os.path.abspath(collection_file))
     try:
@@ -237,7 +245,7 @@ def readCollectionMeta(collection_file):
             tests.append(test.tag)
     collection = LinkTestCollection(title=title, description=description, casefiles=tests)
     for testfile in collection.casefiles:
-        case = readTestCase(os.path.join(collection_path, testfile))
+        case = readTestCase(os.path.join(collection_path, testfile), checker=checker)
         collection.cases.append(case)
     return collection
 
@@ -250,14 +258,14 @@ def generateIndex():
         index.addCollection(testcollection)
     print index.generate(template_path=os.path.join(basedir, "templates")).encode('utf-8')
 
-def buildTestSuite():
+def buildTestSuite(checker=None):
     suite = unittest.TestSuite()
     basedir = getBaseDir()
     for testcollection_file in (glob.glob(os.path.join(basedir, 'testcases', '**', '*.collection'))):
         colldir = os.path.dirname(os.path.abspath(testcollection_file))
         colldir = os.path.split(colldir)[-1]
         
-        testcollection = readCollectionMeta(testcollection_file)
+        testcollection = readCollectionMeta(testcollection_file, checker=checker)
         for case in testcollection.cases:
             suite.addTest(case)
     return suite
