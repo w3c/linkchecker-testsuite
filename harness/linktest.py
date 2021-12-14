@@ -52,7 +52,7 @@ class TestRun(unittest.TestCase):
         basedir = getBaseDir()
         test_file = os.path.join(basedir, 'sample', 'sample.test')
         sample_test = readTestCase(test_file)
-        self.assert_(isinstance(sample_test, LinkTestCase))
+        self.assertTrue(isinstance(sample_test, LinkTestCase))
 
       
     def test_1_2_readTestCase(self):
@@ -66,8 +66,8 @@ class TestRun(unittest.TestCase):
           sample_test.docURI, 
           sample_test.runOptions, 
           sample_test.expectResults),
-         (u"Sample Test case for a 404", 
-         u'''The document links to a 404 not found resource.\n        The checker should report the broken link''',
+         ("Sample Test case for a 404", 
+         '''The document links to a 404 not found resource.\n        The checker should report the broken link''',
          "http://checklink.test/link-testsuite/http-404.html", 
          {}, 
          {"404": "http://checklink.test/link-testsuite/http?code=404"})
@@ -84,7 +84,7 @@ class TestRun(unittest.TestCase):
         basedir = getBaseDir()
         collection_file = os.path.join(basedir, 'sample', 'sample.collection')
         sample_collection = readCollectionMeta(collection_file)
-        self.assert_(isinstance(sample_collection, LinkTestCollection))    
+        self.assertTrue(isinstance(sample_collection, LinkTestCollection))    
     
     def test_2_2_readCollectionMeta(self):
         """Opening and parsing a Test Collection metadata file (values)"""
@@ -93,7 +93,7 @@ class TestRun(unittest.TestCase):
         sample_collection = readCollectionMeta(collection_file)
         self.assertEqual(
           (sample_collection.title, sample_collection.description, sample_collection.casefiles),
-          (u"test", u"Sample Collection with one test", ["sample.test"])
+          ("test", "Sample Collection with one test", ["sample.test"])
         )
     
     def test_3_buildTestCollection(self):
@@ -110,8 +110,8 @@ class TestRun(unittest.TestCase):
               sample_test.docURI, 
               sample_test.runOptions, 
               sample_test.expectResults),
-              (u"Sample Test case for a 404", 
-              u'''The document links to a 404 not found resource.\n        The checker should report the broken link''',
+              ("Sample Test case for a 404", 
+              '''The document links to a 404 not found resource.\n        The checker should report the broken link''',
               "http://checklink.test/link-testsuite/http-404.html", 
               {}, 
               {"404": "http://checklink.test/link-testsuite/http?code=404"})
@@ -133,7 +133,7 @@ def main(argv=None):
             for (opt, value) in opts:
                 if opt == "h" or opt == "--help":
                     raise Usage(msg)
-        except getopt.error, msg:
+        except getopt.error as msg:
             raise Usage(msg)
     
         # option processing
@@ -152,9 +152,9 @@ def main(argv=None):
         if len(args) == 0:
             raise Usage(help_message)
     
-    except Usage, err:
-        print >> sys.stderr, sys.argv[0].split("/")[-1] + ": " + str(err.msg)
-        print >> sys.stderr, "\t for help use --help"
+    except Usage as err:
+        print(sys.argv[0].split("/")[-1] + ": " + str(err.msg), file=sys.stderr)
+        print("\t for help use --help", file=sys.stderr)
         return 2
 
         
@@ -182,7 +182,7 @@ def readTestCase(test_file, checker=None):
     test_file_handle = open(test_file, 'r')
     try:
         tree = ET.parse(test_file_handle)
-    except SyntaxError, v:
+    except SyntaxError as v:
         raise v
     title = tree.findtext("title")
     if title:
@@ -195,7 +195,7 @@ def readTestCase(test_file, checker=None):
     else:
         descr = None
     doc_elt = tree.find(".//doc")
-    if doc_elt.attrib.has_key("href"):
+    if "href" in doc_elt.attrib:
         test_uri = doc_elt.attrib["href"]
     else:
         test_uri = None
@@ -205,8 +205,8 @@ def readTestCase(test_file, checker=None):
     expected = dict()
     if expect_elt.getchildren():
         for child in expect_elt.findall("report"):
-            if child.attrib.has_key("href") and child.attrib.has_key("code"):
-                if expected.has_key(child.tag):
+            if "href" in child.attrib and "code" in child.attrib:
+                if child.tag in expected:
                     expected[child.attrib["code"]].append(child.attrib["href"])
                 else:
                     expected[child.attrib["code"]] = (child.attrib["href"])
@@ -225,21 +225,21 @@ def readCollectionMeta(collection_file, checker=None):
     collection_path = os.path.dirname(os.path.abspath(collection_file))
     try:
         tree = ET.parse(collection_file_handle)
-    except SyntaxError, v:
+    except SyntaxError as v:
         raise v
     title = tree.findtext("title")
     if title:
         title = title.decode("utf-8")
     else:
-        title = u""
+        title = ""
     description = tree.findtext("description")
     if description:
         description = description.decode("utf-8")
     else:
-        description = u""
+        description = ""
     tests = list()
     for test in tree.findall("testcase"):
-        if test.attrib.has_key("src"):
+        if "src" in test.attrib:
             tests.append(test.attrib["src"])
         else:
             tests.append(test.tag)
@@ -256,7 +256,7 @@ def generateIndex():
         colldir = os.path.split(colldir)[-1]        
         testcollection = readCollectionMeta(testcollection_file)
         index.addCollection(testcollection)
-    print index.generate(template_path=os.path.join(basedir, "templates")).encode('utf-8')
+    print(index.generate(template_path=os.path.join(basedir, "templates")).encode('utf-8'))
 
 def buildTestSuite(checker=None):
     suite = unittest.TestSuite()

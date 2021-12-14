@@ -19,7 +19,7 @@ class LinkTestCase(unittest.TestCase):
         if title:
             self.title = title
         else:
-            self.title = u''
+            self.title = ''
         if docURI:
             self.docURI = docURI
         else: 
@@ -27,7 +27,7 @@ class LinkTestCase(unittest.TestCase):
         if description:
             self.description = description
         else:
-            self.description = u""
+            self.description = ""
         if isinstance(runOptions, dict):
             self.runOptions = runOptions
         else:
@@ -54,11 +54,11 @@ class LinkTestCollection():
         if title != None:
             self.title = title
         else:
-            self.title = u""
+            self.title = ""
         if description != None:
             self.description = description
         else:
-            self.description = u""
+            self.description = ""
         if (isinstance(casefiles, list)):
             self.casefiles = casefiles
         else:
@@ -75,7 +75,7 @@ class LinkTestCase_UT(unittest.TestCase):
         default_tc = LinkTestCase()
         self.assertEqual(
             [default_tc.title, default_tc.description, default_tc.docURI, default_tc.runOptions, default_tc.expectResults],
-            [u'', u'', '', dict(), dict()]
+            ['', '', '', dict(), dict()]
         )
         
 

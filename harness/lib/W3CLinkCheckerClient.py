@@ -11,7 +11,7 @@ http://www.w3.org/Consortium/Legal/copyright-software
 
 import re
 import unittest
-import urllib, urllib2
+import urllib.request, urllib.parse, urllib.error, urllib.request, urllib.error, urllib.parse
 import xml.etree.cElementTree as ET
 
 class W3CLinkCheckerClient():
@@ -25,32 +25,32 @@ class W3CLinkCheckerClient():
         
     def call_checklink(self, TC_uri, TC_options=None):
         """Make a request to the link checker and store its response"""
-        data = urllib.quote(TC_uri, "")
+        data = urllib.parse.quote(TC_uri, "")
         try:
-            response = urllib2.urlopen(self.checklink_cgi+"?uri="+data)
+            response = urllib.request.urlopen(self.checklink_cgi+"?uri="+data)
             return response
-        except (urllib2.HTTPError, urllib2.URLError):
+        except (urllib.error.HTTPError, urllib.error.URLError):
             return None
 
     def parse_checklink(self, response):
         """Parse a W3C Link Checker response (HTML-scraping. baååååd.)"""
         try: 
             tree = ET.parse(response)
-        except SyntaxError, v:
+        except SyntaxError as v:
             raise v
         #reports = tree.find(".//dl[@class=’report’]")
         # won't be available before ET v1.3
         reports = dict()
         for dl_elt in tree.findall(".//{http://www.w3.org/1999/xhtml}dl"):
             # don't forget to look for elements in the xhtml namespace
-            if dl_elt.attrib.has_key("class"):
+            if "class" in dl_elt.attrib:
                 if dl_elt.attrib["class"] == 'report':
                     for dt_elt in dl_elt.findall("./{http://www.w3.org/1999/xhtml}dt"):
                         message_class = None
-                        if dt_elt.attrib.has_key("id"):
+                        if "id" in dt_elt.attrib:
                             message_class = re.sub(r'.*\_', '', dt_elt.attrib["id"])
                             message_uri = dt_elt.find("./{http://www.w3.org/1999/xhtml}a").attrib["href"]
-                            if reports.has_key(message_class):
+                            if message_class in reports:
                                 reports[message_class].append(message_uri)
                             else:
                                 reports[message_class] = (message_uri)
@@ -70,10 +70,10 @@ class W3CLinkCheckerClient_UT(unittest.TestCase):
         """Check whether our link checker can be contacted"""
         default_wlc = W3CLinkCheckerClient()
         try:
-            hello_checker = urllib2.urlopen(default_wlc.checklink_cgi)
+            hello_checker = urllib.request.urlopen(default_wlc.checklink_cgi)
             hello_checker_info = hello_checker.info()
             assert 1
-        except (urllib2.HTTPError, urllib2.URLError):
+        except (urllib.error.HTTPError, urllib.error.URLError):
             assert 0, "could not contact link checker" 
 
     def test_3_contact_checklink(self):
@@ -96,9 +96,9 @@ class W3CLinkCheckerClient_UT(unittest.TestCase):
         default_wlc = W3CLinkCheckerClient()
         wlc_response = default_wlc.call_checklink("http://checklink.test/link-testsuite/base-2.php")
         wlc_reports = default_wlc.parse_checklink(wlc_response)
-        self.assert_(isinstance(wlc_reports, dict), "parsing result should be a dict")
-        self.assertEqual( len(wlc_reports.keys()), 1, "for this case, there should be one key-value pair in the parse dict")
-        self.assertEqual( wlc_reports.keys()[0], '404', "for this case, there should be one 404 in the parse dict")
+        self.assertTrue(isinstance(wlc_reports, dict), "parsing result should be a dict")
+        self.assertEqual( len(list(wlc_reports.keys())), 1, "for this case, there should be one key-value pair in the parse dict")
+        self.assertEqual( list(wlc_reports.keys())[0], '404', "for this case, there should be one 404 in the parse dict")
 
 if __name__ == '__main__':
     unittest.main()

@@ -49,19 +49,19 @@ class DocumentationTests(unittest.TestCase):
     def test_init(self):
         """initialize a Documentation Generator"""
         generator = Documentation()
-        self.assertEquals(generator.type, 'index')
+        self.assertEqual(generator.type, 'index')
     
     def test_init_default_fallback(self):
         """initialize a Documentation Generator with a bogus type"""
         generator = Documentation(type="grut")
-        self.assertEquals(generator.type, 'index')
+        self.assertEqual(generator.type, 'index')
 
     def test_addCollection(self):
         """add test collection"""
         generator = Documentation()
         test_col = LinkTestCase.LinkTestCollection()
         generator.addCollection(test_col)
-        self.assertEquals(len(generator.test_collections), 1)
+        self.assertEqual(len(generator.test_collections), 1)
     
     def test_boguscollection(self):
         """add bogus test collection and raise error"""
