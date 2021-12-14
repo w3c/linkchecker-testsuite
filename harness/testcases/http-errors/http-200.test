@@ -3,7 +3,7 @@
     <title>test reporting HTTP 300</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/http-200.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/http-200.html" />
     <options />
     <expect>
     </expect>

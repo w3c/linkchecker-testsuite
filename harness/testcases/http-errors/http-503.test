@@ -3,9 +3,9 @@
     <title>test reporting HTTP 503</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/http-503.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/http-503.html" />
     <options />
     <expect>
-        <report code="503" href="http://checklink.test/link-testsuite/http?code=503" />
+        <report code="503" href="http://checklink.test:9999/link-testsuite/http?code=503" />
     </expect>
 </test>

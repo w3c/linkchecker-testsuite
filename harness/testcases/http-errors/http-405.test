@@ -3,9 +3,9 @@
     <title>test reporting HTTP 405</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/http-405.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/http-405.html" />
     <options />
     <expect>
-        <report code="405" href="http://checklink.test/link-testsuite/http?code=405" />
+        <report code="405" href="http://checklink.test:9999/link-testsuite/http?code=405" />
     </expect>
 </test>

@@ -34,20 +34,20 @@
 <p>Does the checker respect base href and content-location info? Does it report broken links based on those?</p>
  
     <h4>test base URI with BASE href elt</h4>
-    <p><a href="http://checklink.test/link-testsuite/base-1.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/base-1.html">tested document</a></p>
 <p>    relative link goes 404 if BASE href element not parsed
 	EXPECTED: relative link goes 200 if OK - link checker finds no error
     </p>
     
  
     <h4>test base URI with HTTP Content-Location</h4>
-    <p><a href="http://checklink.test/link-testsuite/base-2.php">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/base-2.php">tested document</a></p>
 <p>    relative link goes 404 if HTTP Content-Location not parsed
     	EXPECTED: relative link goes 200 if OK - link checker finds no error</p>
     
  
     <h4>test base URI with BASE href elt and Content-Location</h4>
-    <p><a href="http://checklink.test/link-testsuite/base-3.php">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/base-3.php">tested document</a></p>
 <p>    with both BASE href elt and HTTP Content-Location
     	href takes precedence http://www.w3.org/TR/html401/struct/links.html#h-12.4.1
     	relative link goes 404 if neither BASE nor Content-Location respected
@@ -56,7 +56,7 @@
     
  
     <h4>test base URI with relative BASE href (forbidden)</h4>
-    <p><a href="http://checklink.test/link-testsuite/base-4.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/base-4.html">tested document</a></p>
 <p>    
         This document has a bogus BASE href value. Per the spec:
             <q cite="http://www.w3.org/TR/html401/struct/links.html#h-12.4">This attribute specifies an <strong>absolute URI</strong> that acts as the base URI for resolving relative URIs.</q>
@@ -64,7 +64,7 @@
     
  
     <h4>test base URI with BASE href elt and Content-Base</h4>
-    <p><a href="http://checklink.test/link-testsuite/base-5.php">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/base-5.php">tested document</a></p>
 <p>    with both BASE href elt and HTTP Content-Base
     	href takes precedence http://www.w3.org/TR/html401/struct/links.html#h-12.4.1
     	relative link goes 404 if neither BASE nor Content-Base respected
@@ -77,7 +77,7 @@
 <p>Testing whether the checker catches 404 for all attributes values set to %URI type in HTML 4.01</p>
  
     <h4>test HTML A href (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_a_href.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_a_href.html">tested document</a></p>
 <p>    
         A href OK
         	EXPECTED: link checker passes
@@ -85,7 +85,7 @@
     
  
     <h4>test HTML A href (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_a_href_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_a_href_b.html">tested document</a></p>
 <p>    
         A href 404
         	EXPECTED: link checker throws error
@@ -93,13 +93,13 @@
     
  
     <h4>test HTML BASE href (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_base_href.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_base_href.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML BASE href (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_base_href_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_base_href_b.html">tested document</a></p>
 <p>    
         BASE href 404
         	EXPECTED: link checker does not throw error (not dereferenced)
@@ -107,13 +107,13 @@
     
  
     <h4>test HTML BODY background (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_body_background.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_body_background.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML BODY background (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_body_background_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_body_background_b.html">tested document</a></p>
 <p>    
         BODY background 404
         	EXPECTED: link checker throws error
@@ -121,13 +121,13 @@
     
  
     <h4>test HTML BLOCKQUOTE cite (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_blockquote_cite.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_blockquote_cite.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML BLOCKQUOTE cite (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_blockquote_cite_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_blockquote_cite_b.html">tested document</a></p>
 <p>    
         BLOCKQUOTE cite 404
         	EXPECTED: link checker throws error
@@ -135,13 +135,13 @@
     
  
     <h4>test HTML DEL cite (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_del_cite.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_del_cite.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML DEL cite (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_del_cite_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_del_cite_b.html">tested document</a></p>
 <p>    
         DEL cite 404
         	EXPECTED: link checker throws error
@@ -149,14 +149,14 @@
     
  
     <h4>test HTML FRAME longdesc (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_frame_longdesc.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_frame_longdesc.html">tested document</a></p>
 <p>    
         OK frameset document with longdesc dereferencing (control test)
     </p>
     
  
     <h4>test HTML FRAME longdesc (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_frame_longdesc_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_frame_longdesc_b.html">tested document</a></p>
 <p>    
         Frameset document with a frame longdesc dereferencing into a 404.
         EXPECTED: link checker throws error
@@ -164,14 +164,14 @@
     
  
     <h4>test HTML FRAME src (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_frame_src.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_frame_src.html">tested document</a></p>
 <p>    
         OK frameset document with src dereferencing (control test)
     </p>
     
  
     <h4>test HTML FRAME src (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_frame_src_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_frame_src_b.html">tested document</a></p>
 <p>    
         Frameset document with a frame src dereferencing into a 404.
         EXPECTED: link checker throws error
@@ -179,67 +179,67 @@
     
  
     <h4>test HTML HEAD profile (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_head_profile.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_head_profile.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML HEAD profile (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_head_profile_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_head_profile_b.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML IFRAME longdesc (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_iframe_longdesc.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_iframe_longdesc.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML IFRAME longdesc (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_iframe_longdesc_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_iframe_longdesc_b.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML IFRAME src (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_iframe_src.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_iframe_src.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML IFRAME src (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_iframe_src_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_iframe_src_b.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML IMG longdesc (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_img_longdesc.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_img_longdesc.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML IMG longdesc (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_img_longdesc_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_img_longdesc_b.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML IMG src (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_img_src.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_img_src.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML IMG src (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_img_src_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_img_src_b.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML INPUT src (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_input_src.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_input_src.html">tested document</a></p>
 <p>    
         INPUT src OK
         	EXPECTED: link checker throws error
@@ -247,7 +247,7 @@
     
  
     <h4>test HTML INPUT src (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_input_src_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_input_src_b.html">tested document</a></p>
 <p>    
        INPUT src 404
         	EXPECTED: link checker throws error
@@ -255,13 +255,13 @@
     
  
     <h4>test HTML INS cite (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_ins_cite.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_ins_cite.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML INS cite (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_ins_cite_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_ins_cite_b.html">tested document</a></p>
 <p>    
         INS cite 404
         	EXPECTED: link checker throws error
@@ -269,25 +269,25 @@
     
  
     <h4>test HTML LINK href (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_link_href.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_link_href.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML LINK href (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_link_href_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_link_href_b.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML Q cite (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_q_cite.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_q_cite.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML Q cite (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_q_cite_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_q_cite_b.html">tested document</a></p>
 <p>    
         Q cite 404
         	EXPECTED: link checker throws error
@@ -295,13 +295,13 @@
     
  
     <h4>test HTML SCRIPT src (control)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_script_src.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_script_src.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test HTML SCRIPT src (404)</h4>
-    <p><a href="http://checklink.test/link-testsuite/html_script_src_b.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/html_script_src_b.html">tested document</a></p>
 <p>    
     </p>
     
@@ -311,25 +311,25 @@
 <p>Testing whether the checker reports redirects</p>
  
     <h4>test reporting HTTP 300 (optional)</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-300.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-300.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 301 (optional)</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-301.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-301.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 302 (optional)</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-302.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-302.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 307 (optional)</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-307.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-307.html">tested document</a></p>
 <p>    
     </p>
     
@@ -339,151 +339,151 @@
 <p>Testing whether the checker reports all possible kinds of HTTP errors (4xx and 5xx)</p>
  
     <h4>test reporting HTTP 400</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-400.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-400.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 401</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-401.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-401.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 402</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-402.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-402.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 403</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-403.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-403.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 404 (DNS error)</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-404-DNS.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-404-DNS.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 404</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-404.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-404.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 405</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-405.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-405.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 406</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-406.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-406.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 407</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-407.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-407.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 408</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-408.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-408.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 409</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-409.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-409.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 410</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-410.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-410.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 411</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-411.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-411.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 412</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-412.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-412.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 413</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-413.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-413.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 414</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-414.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-414.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 415</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-415.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-415.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 416</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-416.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-416.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 417</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-417.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-417.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 500</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-500.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-500.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 501</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-501.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-501.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 502</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-502.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-502.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 503</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-503.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-503.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 504</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-504.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-504.html">tested document</a></p>
 <p>    
     </p>
     
  
     <h4>test reporting HTTP 505</h4>
-    <p><a href="http://checklink.test/link-testsuite/http-505.html">tested document</a></p>
+    <p><a href="http://checklink.test:9999/link-testsuite/http-505.html">tested document</a></p>
 <p>    
     </p>
     

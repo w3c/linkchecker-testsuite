@@ -5,7 +5,7 @@
         INPUT src OK
         	EXPECTED: link checker throws error
     </description>
-    <doc href="http://checklink.test/link-testsuite/html_input_src.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/html_input_src.html" />
     <options />
     <expect>
     </expect>

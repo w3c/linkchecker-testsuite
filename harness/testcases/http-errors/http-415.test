@@ -3,9 +3,9 @@
     <title>test reporting HTTP 415</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/http-415.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/http-415.html" />
     <options />
     <expect>
-        <report code="415" href="http://checklink.test/link-testsuite/http?code=415" />
+        <report code="415" href="http://checklink.test:9999/link-testsuite/http?code=415" />
     </expect>
 </test>

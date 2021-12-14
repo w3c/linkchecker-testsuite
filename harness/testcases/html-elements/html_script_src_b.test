@@ -3,9 +3,9 @@
     <title>test HTML SCRIPT src (404)</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/html_script_src_b.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/html_script_src_b.html" />
     <options />
     <expect>
-        <report code="404" href="http://checklink.test/link-testsuite/http?code=404" />
+        <report code="404" href="http://checklink.test:9999/link-testsuite/http?code=404" />
     </expect>
 </test>

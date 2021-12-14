@@ -5,7 +5,7 @@
         A href OK
         	EXPECTED: link checker passes
     </description>
-    <doc href="http://checklink.test/link-testsuite/html_a_href.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/html_a_href.html" />
     <options />
     <expect>
     </expect>

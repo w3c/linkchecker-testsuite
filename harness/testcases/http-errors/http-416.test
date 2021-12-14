@@ -3,9 +3,9 @@
     <title>test reporting HTTP 416</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/http-416.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/http-416.html" />
     <options />
     <expect>
-        <report code="416" href="http://checklink.test/link-testsuite/http?code=416" />
+        <report code="416" href="http://checklink.test:9999/link-testsuite/http?code=416" />
     </expect>
 </test>

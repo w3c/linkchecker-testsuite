@@ -3,7 +3,7 @@
     <title>test HTML BASE href (control)</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/html_base_href.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/html_base_href.html" />
     <options />
     <expect>
     </expect>

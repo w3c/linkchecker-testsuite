@@ -3,9 +3,9 @@
     <title>test reporting HTTP CODE</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/http-CODE.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/http-CODE.html" />
     <options />
     <expect>
-        <report code="CODE" href="http://checklink.test/link-testsuite/http?code=CODE" />
+        <report code="CODE" href="http://checklink.test:9999/link-testsuite/http?code=CODE" />
     </expect>
 </test>

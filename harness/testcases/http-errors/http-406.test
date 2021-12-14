@@ -3,9 +3,9 @@
     <title>test reporting HTTP 406</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/http-406.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/http-406.html" />
     <options />
     <expect>
-        <report code="406" href="http://checklink.test/link-testsuite/http?code=406" />
+        <report code="406" href="http://checklink.test:9999/link-testsuite/http?code=406" />
     </expect>
 </test>

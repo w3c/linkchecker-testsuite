@@ -3,9 +3,9 @@
     <title>Sample Test case for a 404</title>
     <description>The document links to a 404 not found resource.
         The checker should report the broken link</description>
-    <doc href="http://checklink.test/link-testsuite/http-404.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/http-404.html" />
     <options />
     <expect>
-        <report code="404" href="http://checklink.test/link-testsuite/http?code=404" />
+        <report code="404" href="http://checklink.test:9999/link-testsuite/http?code=404" />
     </expect>
 </test>

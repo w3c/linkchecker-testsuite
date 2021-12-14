@@ -3,9 +3,9 @@
     <title>test reporting HTTP 414</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/http-414.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/http-414.html" />
     <options />
     <expect>
-        <report code="414" href="http://checklink.test/link-testsuite/http?code=414" />
+        <report code="414" href="http://checklink.test:9999/link-testsuite/http?code=414" />
     </expect>
 </test>

@@ -3,9 +3,9 @@
     <title>test reporting HTTP 402</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/http-402.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/http-402.html" />
     <options />
     <expect>
-        <report code="402" href="http://checklink.test/link-testsuite/http?code=402" />
+        <report code="402" href="http://checklink.test:9999/link-testsuite/http?code=402" />
     </expect>
 </test>

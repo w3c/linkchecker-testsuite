@@ -3,9 +3,9 @@
     <title>test reporting HTTP 301 (optional)</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/http-301.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/http-301.html" />
     <options />
     <expect>
-        <report code="301" href="http://checklink.test/link-testsuite/http?code=301" />
+        <report code="301" href="http://checklink.test:9999/link-testsuite/http?code=301" />
     </expect>
 </test>

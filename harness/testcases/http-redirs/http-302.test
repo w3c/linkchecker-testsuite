@@ -3,9 +3,9 @@
     <title>test reporting HTTP 302 (optional)</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/http-302.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/http-302.html" />
     <options />
     <expect>
-        <report code="302" href="http://checklink.test/link-testsuite/http?code=302" />
+        <report code="302" href="http://checklink.test:9999/link-testsuite/http?code=302" />
     </expect>
 </test>

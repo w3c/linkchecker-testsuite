@@ -3,7 +3,7 @@
     <title>test HTML IFRAME src (control)</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/html_iframe_src.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/html_iframe_src.html" />
     <options />
     <expect>
     </expect>

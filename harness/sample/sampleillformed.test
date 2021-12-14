@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <test>
     <description>Sample Test case for a 404</description>
-    <doc href=http://checklink.test/link-testsuite/http-404.html />
+    <doc href=http://checklink.test:9999/link-testsuite/http-404.html />
     <options />
     <expect>
-        <report code="404" href="http://checklink.test/link-testsuite/http?code=404" />
+        <report code="404" href="http://checklink.test:9999/link-testsuite/http?code=404" />
     </expect>
 </test>

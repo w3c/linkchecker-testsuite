@@ -3,9 +3,9 @@
     <title>test reporting HTTP 400</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/http-400.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/http-400.html" />
     <options />
     <expect>
-        <report code="400" href="http://checklink.test/link-testsuite/http?code=400" />
+        <report code="400" href="http://checklink.test:9999/link-testsuite/http?code=400" />
     </expect>
 </test>

@@ -3,9 +3,9 @@
     <title>test reporting HTTP 413</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/http-413.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/http-413.html" />
     <options />
     <expect>
-        <report code="413" href="http://checklink.test/link-testsuite/http?code=413" />
+        <report code="413" href="http://checklink.test:9999/link-testsuite/http?code=413" />
     </expect>
 </test>

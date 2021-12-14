@@ -3,7 +3,7 @@
     <title>test reporting HTTP 404 (DNS error)</title>
     <description>
     </description>
-    <doc href="http://checklink.test/link-testsuite/http-404-DNS.html" />
+    <doc href="http://checklink.test:9999/link-testsuite/http-404-DNS.html" />
     <options />
     <expect>
         <report code="500" href="http://doesnotexist.test/" />
