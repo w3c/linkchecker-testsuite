@@ -3,9 +3,9 @@
     <title>test reporting HTTP 404</title>
     <description>
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/http-404.html" />
+    <doc href="http://checklink.test/link-testsuite/http-404.html" />
     <options />
     <expect>
-        <report code="404" href="http://qa-dev.w3.org/link-testsuite/http.php?code=404" />
+        <report code="404" href="http://checklink.test/link-testsuite/http.php?code=404" />
     </expect>
 </test>

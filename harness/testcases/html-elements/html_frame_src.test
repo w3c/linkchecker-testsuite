@@ -4,7 +4,7 @@
     <description>
         OK frameset document with src dereferencing (control test)
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/html_frame_src.html" />
+    <doc href="http://checklink.test/link-testsuite/html_frame_src.html" />
     <options />
     <expect>
     </expect>

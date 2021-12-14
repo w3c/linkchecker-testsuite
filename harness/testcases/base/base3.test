@@ -6,7 +6,7 @@
     	relative link goes 404 if neither BASE nor Content-Location respected
     	relative link goes 403 if HTTP Content-Location respected instead of BASE
     	EXPECTED: relative link goes 200 if OK - link checker finds no error</description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/base-3.php" />
+    <doc href="http://checklink.test/link-testsuite/base-3.php" />
     <options />
     <expect>
     </expect>

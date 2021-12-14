@@ -3,7 +3,7 @@
     <title>test HTML Q cite (control)</title>
     <description>
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/html_q_cite.html" />
+    <doc href="http://checklink.test/link-testsuite/html_q_cite.html" />
     <options />
     <expect>
     </expect>

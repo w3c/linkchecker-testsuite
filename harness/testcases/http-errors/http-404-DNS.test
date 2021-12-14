@@ -3,7 +3,7 @@
     <title>test reporting HTTP 404 (DNS error)</title>
     <description>
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/http-404-DNS.html" />
+    <doc href="http://checklink.test/link-testsuite/http-404-DNS.html" />
     <options />
     <expect>
         <report code="-2" href="http://doesnotexist.w3.org/" />

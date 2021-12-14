@@ -3,9 +3,9 @@
     <title>test reporting HTTP 412</title>
     <description>
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/http-412.html" />
+    <doc href="http://checklink.test/link-testsuite/http-412.html" />
     <options />
     <expect>
-        <report code="412" href="http://qa-dev.w3.org/link-testsuite/http.php?code=412" />
+        <report code="412" href="http://checklink.test/link-testsuite/http.php?code=412" />
     </expect>
 </test>

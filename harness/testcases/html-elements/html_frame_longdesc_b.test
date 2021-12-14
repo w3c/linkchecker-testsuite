@@ -5,9 +5,9 @@
         Frameset document with a frame longdesc dereferencing into a 404.
         EXPECTED: link checker throws error
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/html_frame_longdesc_b.html" />
+    <doc href="http://checklink.test/link-testsuite/html_frame_longdesc_b.html" />
     <options />
     <expect>
-        <report code="404" href="http://qa-dev.w3.org/link-testsuite/http.php?code=404" />
+        <report code="404" href="http://checklink.test/link-testsuite/http.php?code=404" />
     </expect>
 </test>

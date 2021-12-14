@@ -3,9 +3,9 @@
     <title>test reporting HTTP 300 (optional)</title>
     <description>
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/http-300.html" />
+    <doc href="http://checklink.test/link-testsuite/http-300.html" />
     <options />
     <expect>
-        <report code="300" href="http://qa-dev.w3.org/link-testsuite/http.php?code=300" />
+        <report code="300" href="http://checklink.test/link-testsuite/http.php?code=300" />
     </expect>
 </test>

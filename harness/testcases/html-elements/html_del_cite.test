@@ -3,7 +3,7 @@
     <title>test HTML DEL cite (control)</title>
     <description>
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/html_del_cite.html" />
+    <doc href="http://checklink.test/link-testsuite/html_del_cite.html" />
     <options />
     <expect>
     </expect>

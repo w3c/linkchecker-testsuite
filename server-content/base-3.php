@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Link Checker Test - base-3</title>
 	<meta name="author" content="olivier Thereaux">
-	<base href="http://qa-dev.w3.org/link-testsuite/trap/">
+	<base href="http://checklink.test/link-testsuite/trap/">
 </head>
 <body>
 <div id="test">

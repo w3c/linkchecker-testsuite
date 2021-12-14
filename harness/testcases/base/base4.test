@@ -5,7 +5,7 @@
         <![CDATA[This document has a bogus BASE href value. Per the spec:
             <q cite="http://www.w3.org/TR/html401/struct/links.html#h-12.4">This attribute specifies an <strong>absolute URI</strong> that acts as the base URI for resolving relative URIs.</q>]]>
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/base-4.html" />
+    <doc href="http://checklink.test/link-testsuite/base-4.html" />
     <options />
     <expect>
         <report code="400" href="./trap/http.php?code=403" />

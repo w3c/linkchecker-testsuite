@@ -20,7 +20,7 @@ class W3CLinkCheckerClient():
         if checklink_cgi != None:
             self.checklink_cgi= checklink_cgi
         else:
-            self.checklink_cgi= 'http://qa-dev.w3.org/wlc/checklink'
+            self.checklink_cgi= 'http://checklink.test/wlc/checklink'
 
         
     def call_checklink(self, TC_uri, TC_options=None):
@@ -64,7 +64,7 @@ class W3CLinkCheckerClient_UT(unittest.TestCase):
     def test_1_init_default(self):
         """Test initialization of a default W3CLinkCheckerClient Object"""
         default_wlc = W3CLinkCheckerClient()
-        self.assertEqual(default_wlc.checklink_cgi, 'http://qa-dev.w3.org/wlc/checklink')
+        self.assertEqual(default_wlc.checklink_cgi, 'http://checklink.test/wlc/checklink')
     
     def test_2_contact_checklink(self):
         """Check whether our link checker can be contacted"""
@@ -81,7 +81,7 @@ class W3CLinkCheckerClient_UT(unittest.TestCase):
         default_wlc = W3CLinkCheckerClient()
         wlc_response = default_wlc.call_checklink("http://validator.w3.org/dev/tests/html20.html")
         assert wlc_response != None, "got no response from a test run of WLC"
-        self.assertEqual(wlc_response.geturl(), "http://qa-dev.w3.org/wlc/checklink?uri=http%3A%2F%2Fvalidator.w3.org%2Fdev%2Ftests%2Fhtml20.html" )
+        self.assertEqual(wlc_response.geturl(), "http://checklink.test/wlc/checklink?uri=http%3A%2F%2Fvalidator.w3.org%2Fdev%2Ftests%2Fhtml20.html" )
     
     def test_4_elementtree(self):
         """Check whether ElementTree parses basic XML and XPath support is high enough"""
@@ -94,7 +94,7 @@ class W3CLinkCheckerClient_UT(unittest.TestCase):
     def test_5_parse_checklink(self):
         """Parse a Controlled link checker response"""
         default_wlc = W3CLinkCheckerClient()
-        wlc_response = default_wlc.call_checklink("http://qa-dev.w3.org/link-testsuite/base-2.php")
+        wlc_response = default_wlc.call_checklink("http://checklink.test/link-testsuite/base-2.php")
         wlc_reports = default_wlc.parse_checklink(wlc_response)
         self.assert_(isinstance(wlc_reports, dict), "parsing result should be a dict")
         self.assertEqual( len(wlc_reports.keys()), 1, "for this case, there should be one key-value pair in the parse dict")

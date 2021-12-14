@@ -5,9 +5,9 @@
         BASE href 404
         	EXPECTED: link checker does not throw error (not dereferenced)
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/html_base_href_b.html" />
+    <doc href="http://checklink.test/link-testsuite/html_base_href_b.html" />
     <options />
     <expect>
-        <!--report code="404" href="http://qa-dev.w3.org/link-testsuite/thisURIdoesnotexist/" /-->
+        <!--report code="404" href="http://checklink.test/link-testsuite/thisURIdoesnotexist/" /-->
     </expect>
 </test>

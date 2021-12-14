@@ -3,9 +3,9 @@
     <title>test reporting HTTP 307 (optional)</title>
     <description>
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/http-307.html" />
+    <doc href="http://checklink.test/link-testsuite/http-307.html" />
     <options />
     <expect>
-        <report code="307" href="http://qa-dev.w3.org/link-testsuite/http.php?code=307" />
+        <report code="307" href="http://checklink.test/link-testsuite/http.php?code=307" />
     </expect>
 </test>

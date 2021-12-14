@@ -3,9 +3,9 @@
     <title>test reporting HTTP 417</title>
     <description>
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/http-417.html" />
+    <doc href="http://checklink.test/link-testsuite/http-417.html" />
     <options />
     <expect>
-        <report code="417" href="http://qa-dev.w3.org/link-testsuite/http.php?code=417" />
+        <report code="417" href="http://checklink.test/link-testsuite/http.php?code=417" />
     </expect>
 </test>

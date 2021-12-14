@@ -3,9 +3,9 @@
     <title>test reporting HTTP 505</title>
     <description>
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/http-505.html" />
+    <doc href="http://checklink.test/link-testsuite/http-505.html" />
     <options />
     <expect>
-        <report code="505" href="http://qa-dev.w3.org/link-testsuite/http.php?code=505" />
+        <report code="505" href="http://checklink.test/link-testsuite/http.php?code=505" />
     </expect>
 </test>

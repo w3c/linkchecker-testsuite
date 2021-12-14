@@ -68,9 +68,9 @@ class TestRun(unittest.TestCase):
           sample_test.expectResults),
          (u"Sample Test case for a 404", 
          u'''The document links to a 404 not found resource.\n        The checker should report the broken link''',
-         "http://qa-dev.w3.org/link-testsuite/http-404.html", 
+         "http://checklink.test/link-testsuite/http-404.html", 
          {}, 
-         {"404": "http://qa-dev.w3.org/link-testsuite/http.php?code=404"})
+         {"404": "http://checklink.test/link-testsuite/http.php?code=404"})
         )
     
     def test_1_3_readTestCase(self):
@@ -112,9 +112,9 @@ class TestRun(unittest.TestCase):
               sample_test.expectResults),
               (u"Sample Test case for a 404", 
               u'''The document links to a 404 not found resource.\n        The checker should report the broken link''',
-              "http://qa-dev.w3.org/link-testsuite/http-404.html", 
+              "http://checklink.test/link-testsuite/http-404.html", 
               {}, 
-              {"404": "http://qa-dev.w3.org/link-testsuite/http.php?code=404"})
+              {"404": "http://checklink.test/link-testsuite/http.php?code=404"})
              )
     
     def test_4_buildTestSuite(self):

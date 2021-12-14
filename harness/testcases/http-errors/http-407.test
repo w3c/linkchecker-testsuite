@@ -3,9 +3,9 @@
     <title>test reporting HTTP 407</title>
     <description>
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/http-407.html" />
+    <doc href="http://checklink.test/link-testsuite/http-407.html" />
     <options />
     <expect>
-        <report code="407" href="http://qa-dev.w3.org/link-testsuite/http.php?code=407" />
+        <report code="407" href="http://checklink.test/link-testsuite/http.php?code=407" />
     </expect>
 </test>

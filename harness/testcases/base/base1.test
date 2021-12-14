@@ -4,7 +4,7 @@
     <description>relative link goes 404 if BASE href element not parsed
 	EXPECTED: relative link goes 200 if OK - link checker finds no error
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/base-1.html" />
+    <doc href="http://checklink.test/link-testsuite/base-1.html" />
     <options />
     <expect>
     </expect>

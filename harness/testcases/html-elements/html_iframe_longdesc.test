@@ -3,7 +3,7 @@
     <title>test HTML IFRAME longdesc (control)</title>
     <description>
     </description>
-    <doc href="http://qa-dev.w3.org/link-testsuite/html_iframe_longdesc.html" />
+    <doc href="http://checklink.test/link-testsuite/html_iframe_longdesc.html" />
     <options />
     <expect>
     </expect>
