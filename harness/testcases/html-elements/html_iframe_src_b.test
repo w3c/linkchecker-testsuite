@@ -6,6 +6,6 @@
     <doc href="http://checklink.test/link-testsuite/html_iframe_src_b.html" />
     <options />
     <expect>
-        <report code="404" href="http://checklink.test/link-testsuite/http.php?code=404" />
+        <report code="404" href="http://checklink.test/link-testsuite/http?code=404" />
     </expect>
 </test>

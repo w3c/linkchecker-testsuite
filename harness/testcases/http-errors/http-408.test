@@ -6,6 +6,6 @@
     <doc href="http://checklink.test/link-testsuite/http-408.html" />
     <options />
     <expect>
-        <report code="408" href="http://checklink.test/link-testsuite/http.php?code=408" />
+        <report code="408" href="http://checklink.test/link-testsuite/http?code=408" />
     </expect>
 </test>

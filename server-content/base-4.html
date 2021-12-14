@@ -4,12 +4,12 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Link Checker Test - base-1</title>
 	<meta name="author" content="olivier Thereaux">
-	<base href="./trap/">
+	<base href="trap/">
 </head>
 <body>
     <p>This document has a bogus BASE href value. Per the spec:
         <q cite="http://www.w3.org/TR/html401/struct/links.html#h-12.4">This attribute specifies an <strong>absolute URI</strong> that acts as the base URI for resolving relative URIs.</q></p>
         
-    <p><a href="http.php?code=403">this should return a 200 OK</a> if the UA has some error recovery but the checker SHOULD return a 400 malformed URL</p>
+    <p><a href="http?code=403">this should return a 200 OK</a> if the UA has some error recovery but the checker SHOULD return a 400 malformed URL</p>
 </body>
 </html>

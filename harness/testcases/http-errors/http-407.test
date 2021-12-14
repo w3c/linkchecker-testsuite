@@ -6,6 +6,6 @@
     <doc href="http://checklink.test/link-testsuite/http-407.html" />
     <options />
     <expect>
-        <report code="407" href="http://checklink.test/link-testsuite/http.php?code=407" />
+        <report code="407" href="http://checklink.test/link-testsuite/http?code=407" />
     </expect>
 </test>

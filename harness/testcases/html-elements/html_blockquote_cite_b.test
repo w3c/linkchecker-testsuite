@@ -8,6 +8,6 @@
     <doc href="http://checklink.test/link-testsuite/html_blockquote_cite_b.html" />
     <options />
     <expect>
-        <report code="404" href="http://checklink.test/link-testsuite/http.php?code=404" />
+        <report code="404" href="http://checklink.test/link-testsuite/http?code=404" />
     </expect>
 </test>

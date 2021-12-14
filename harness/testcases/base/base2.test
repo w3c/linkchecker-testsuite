@@ -3,7 +3,7 @@
     <title>test base URI with HTTP Content-Location</title>
     <description>relative link goes 404 if HTTP Content-Location not parsed
     	EXPECTED: relative link goes 200 if OK - link checker finds no error</description>
-    <doc href="http://checklink.test/link-testsuite/base-2.php" />
+    <doc href="http://checklink.test/link-testsuite/base-2.html" />
     <options />
     <expect>
     </expect>

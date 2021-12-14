@@ -6,6 +6,6 @@
     <doc href="http://checklink.test/link-testsuite/http-504.html" />
     <options />
     <expect>
-        <report code="504" href="http://checklink.test/link-testsuite/http.php?code=504" />
+        <report code="504" href="http://checklink.test/link-testsuite/http?code=504" />
     </expect>
 </test>
