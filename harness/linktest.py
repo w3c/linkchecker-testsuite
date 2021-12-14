@@ -30,8 +30,7 @@ Usage: linktest.py [options] [run|sanity|doc]
         -h, --help: this manual you are reading
         -v, --verbose: verbose output
         -q, --quiet: suppress all output except errors
-        --checker_uri: use a specific link checker instance
-          e.g http://validator.w3.org/checklink
+        --checker_path: path to the checklink CLI script
 
     Modes:
         run: run the link checker test suite 
@@ -124,12 +123,12 @@ class TestRun(unittest.TestCase):
 
 def main(argv=None):
     verbose=1
-    checker_uri = None
+    checker_path = None
     if argv is None:
         argv = sys.argv
     try:
         try:
-            opts, args = getopt.getopt(argv[1:], "ho:vq", ["help", "output=", "verbose", "quiet", "checker_uri="])
+            opts, args = getopt.getopt(argv[1:], "ho:vq", ["help", "output=", "verbose", "quiet", "checker_path="])
             for (opt, value) in opts:
                 if opt == "h" or opt == "--help":
                     raise Usage(msg)
@@ -146,8 +145,8 @@ def main(argv=None):
                 raise Usage(help_message)
             if option in ("-o", "--output"):
                 output = value
-            if option == "--checker_uri":
-                checker_uri = value
+            if option == "--checker_path":
+                checker_path = value
 
         if len(args) == 0:
             raise Usage(help_message)
@@ -160,8 +159,8 @@ def main(argv=None):
         
     if args[0] == "run":
         checker = None
-        if checker_uri:
-            checker = W3CLinkCheckerClient(checker_uri)
+        if checker_path:
+            checker = W3CLinkCheckerClient(checker_path)
         suite = buildTestSuite(checker)
         unittest.TextTestRunner(verbosity=verbose).run(suite)
     elif args[0] == "sanity":
@@ -185,15 +184,7 @@ def readTestCase(test_file, checker=None):
     except SyntaxError as v:
         raise v
     title = tree.findtext("title")
-    if title:
-        title = title.decode("utf-8")
-    else:
-        title = None
     descr = tree.findtext("description")
-    if descr:
-        descr = descr.decode("utf-8")
-    else:
-        descr = None
     doc_elt = tree.find(".//doc")
     if "href" in doc_elt.attrib:
         test_uri = doc_elt.attrib["href"]
@@ -211,7 +202,7 @@ def readTestCase(test_file, checker=None):
                 else:
                     expected[child.attrib["code"]] = (child.attrib["href"])
                 
-    case = LinkTestCase(title=title, description=descr, docURI=test_uri, runOptions=None, expectResults=expected, checker=checker)
+    case = LinkTestCase(title=title + " " + test_uri, description=descr, docURI=test_uri, runOptions=None, expectResults=expected, checker=checker)
     return case
 
 def readTestCollection(collection_path):
@@ -228,15 +219,7 @@ def readCollectionMeta(collection_file, checker=None):
     except SyntaxError as v:
         raise v
     title = tree.findtext("title")
-    if title:
-        title = title.decode("utf-8")
-    else:
-        title = ""
     description = tree.findtext("description")
-    if description:
-        description = description.decode("utf-8")
-    else:
-        description = ""
     tests = list()
     for test in tree.findall("testcase"):
         if "src" in test.attrib:
