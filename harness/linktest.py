@@ -194,20 +194,20 @@ def readTestCase(test_file, checker=None):
     ## TODO
     expect_elt = tree.find(".//expect")
     expected = dict()
-    if expect_elt.getchildren():
+    if len(list(expect_elt)):
         for child in expect_elt.findall("report"):
             if "href" in child.attrib and "code" in child.attrib:
                 if child.tag in expected:
                     expected[child.attrib["code"]].append(child.attrib["href"])
                 else:
                     expected[child.attrib["code"]] = (child.attrib["href"])
-                
+
     case = LinkTestCase(title=title + " " + test_uri, description=descr, docURI=test_uri, runOptions=None, expectResults=expected, checker=checker)
     return case
 
 def readTestCollection(collection_path):
     basedir = getBaseDir()
-    
+
     for metafile in glob.glob(os.path.join(collection_path, '*.collection')):
         collection = readCollectionMeta(metafile)
 
