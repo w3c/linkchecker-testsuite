@@ -162,13 +162,13 @@ def main(argv=None):
         if checker_path:
             checker = W3CLinkCheckerClient(checker_path)
         suite = buildTestSuite(checker)
-        return unittest.TextTestRunner(verbosity=verbose).run(suite)
+        return unittest.TextTestRunner(verbosity=verbose).run(suite).wasSuccessful()
     elif args[0] == "sanity":
         suite1 = unittest.TestLoader().loadTestsFromTestCase(W3CLinkCheckerClient_UT)
         suite2 = unittest.TestLoader().loadTestsFromTestCase(LinkTestCase_UT)
         suite3 = unittest.TestLoader().loadTestsFromTestCase(TestRun)
         suite = unittest.TestSuite([suite1, suite2, suite3])
-        return unittest.TextTestRunner(verbosity=verbose).run(suite)
+        return unittest.TextTestRunner(verbosity=verbose).run(suite).wasSuccessful()
         
     elif args[0] == "doc":
         generateIndex()
@@ -255,4 +255,5 @@ def buildTestSuite(checker=None):
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    if not main():
+        sys.exit(2)
