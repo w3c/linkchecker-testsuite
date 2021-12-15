@@ -12,7 +12,7 @@ class LinkTestSuiteRequestHandler(server.SimpleHTTPRequestHandler):
             path = path + "index.html"
         relpath = os.path.relpath(path, os.getcwd())
         if self.headers.get('Host') == "checklink2.test:" + str(PORT):
-            fullpath = relpath.replace('link-testsuite', 'server-content/alt')
+            fullpath = "server-content/alt/" + relpath
         else:
             fullpath = relpath.replace('link-testsuite', 'server-content')
         self.localpath = fullpath
