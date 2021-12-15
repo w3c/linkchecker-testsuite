@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <test>
-    <title>test base URI with relative BASE href (forbidden)</title>
+    <title>test base URI with relative BASE href</title>
     <description>
-        <![CDATA[This document has a bogus BASE href value. Per the spec:
-            <q cite="http://www.w3.org/TR/html401/struct/links.html#h-12.4">This attribute specifies an <strong>absolute URI</strong> that acts as the base URI for resolving relative URIs.</q>]]>
+        This document uses a relative BASE href value.
     </description>
     <doc href="http://checklink.test:9999/link-testsuite/base-4.html" />
     <options />
     <expect>
-        <report code="400" href="/trap/http?code=403" />
     </expect>
 </test>
